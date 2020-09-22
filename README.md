@@ -4,7 +4,7 @@ Proyecto-Final-Backend-Nacimiento-Alan
 Contrato 
 
 
-Users
+<h3>Users </h3>
 
 GET urlbase/users -> devuelve todos los usuarios. 
 
@@ -15,7 +15,7 @@ POST urlbase/user -> crea un nuevo usuarios.
 DELETE urlbase/name -> elimina un usuarios.
 
 
-Songs
+<h3>Songs</h3>
 
 GET urlbase/songs -> devuelve todas las canciones. 
 

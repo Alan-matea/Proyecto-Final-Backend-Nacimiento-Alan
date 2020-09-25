@@ -1,76 +1,32 @@
-const express = require("exprss");
+const express = require('express');
 const mongoose = require('mongoose');
 
+// importando rutas
+const Songsrute = require ('./Songs/Songsroute.js');
+const Userssrute = require ('./Users/Usersroute.js');
+
 const app = express();
+app.use(express.json());
+app.listen(process.env.PORT);
 
 mongoose.connect(
   "mongodb+srv://Alan-matea:Matea2020@prueba-db.vrgps.mongodb.net/Mateify?retryWrites=true&w=majority",
-  { useUnifiedTopology: true, useNewUrlParser: true }
-
+  { useNewUrlParser: true, useUnifiedTopology: true }
 
   .then(db => console.log('Db connected'))
   .catch(err => console.log(err))
 );
 
-// importando rutas
-
-const Songsrouter = require(',/routes/Songsrouter')
-
-
-//rutes
-
-
 //Songs
-
-app.get('/songs'), (req, res) => {
-
-app.get(('/song/:name'),(req, res) => {
-//     try{
-//         var cancion = controller.getSongByName(req.params.name);
-//         res.status(200);
-//         res.send(cancion);
-//     } catch(e){
-//         res.status(500);
-//         res.send('Error al buscar las canciones');
-//     }
-
-//   });
-
-app.post('/song'), (req, res) => {
-//     var cancion = req.body;
-//     console.log(cancion);
-//     canciones.push(cancion);
-//     res.status(201);
-//     res.send('Se agrego la cancion correctamente.');
-// })
-
-app.delete('/song/:name'), (req, res) => {
-
+app.get('/songs/', songsRoute.getSongs)
+app.get('/songs/:name', songsRoute.getSongByName)
+app.post('/songs/', songsRoute.postSong)
 
 //Users
+app.get('/users/', userRoute.getUsers)
+app.post('/users/', userRoute.postUser)
 
-app.get('/users')
-
-app.get('/users/:name')
-
-app.post('/user')
-
-app.delete('/users/:name')
-
-
-// esto esta iniciando el servidor
 app.listen(4000, () => {
-    console.log('Server on port 4000');
+    console.log('Servidor andando en puerto 4000');
 
 });
-
-
-
-
-
-
-
-
-
-
-

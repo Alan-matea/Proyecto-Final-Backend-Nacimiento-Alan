@@ -1,34 +1,51 @@
-// const controller = require('controller.js');
+const controller = require('Songscontroller.js');
 const express = requier('express');
 const router = express();
 
 
-
-router.get('/', (req, res) =>{
+router.get('/', (req, res) => {
     res.send('');
 });
 
 
+async function getSongs (req,res) {
+  try
+  {
+      var songs = await songsController.findAllSongs();
+      res.status(200).send(songs);
+  }
+  catch(e){
+      res.status(500).send('Hubo un error ' + e);
+  }
+}
 
-var server = express();
-server.user(express.json());
-server.listen(4000);
+
+async function getSongByName (req,res) { 
+  try
+  { 
+    var songs = await songsController.findOneSong(req.params.name)
+    res.status(200).send(songs);
+  }
+
+  catch(e){
+    res.status(500).send('Hubo un error ' + e);
+  }
+}
 
 
+async function postSong(req,res){ 
+  try
+  { 
+
+  }
+
+  catch(e){
+    res.status(500)
+
+  }
+}
 
 
-
-// // GET Devuelve la cancion que el usuario pide.
-// server.get("/:name", async(req, res) => {
-//     try{
-//         var cancion = controller.getSongByName(req.params.name);
-//         res.status(200);
-//         res.send(cancion);
-//     } catch(e){
-//         res.status(500);
-//         res.send('Error al buscar las canciones');
-//     }
-
-//   });
-  
-  module.exports = router;
+  module.exports = {
+    router, 
+  }

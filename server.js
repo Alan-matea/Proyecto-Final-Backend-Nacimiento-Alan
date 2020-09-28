@@ -16,7 +16,7 @@ mongoose.connect(
 app.listen(4000);
 //Songs
 app.get("/songs", songsRoute.getSongs);
-//app.get('/songs/:name', songsRoute.getSongByName);
+app.get('/songs/:name', songsRoute.getSongByName);
 app.post("/songs/", songsRoute.postSong);
 
 //Users

@@ -16,8 +16,16 @@ async function getAllSongs(){
   return await Song.find({});
 }
 
+async function postSong(body){
+  const newSong = new Song(body);
+  await newSong.save();
+  console.log ("la cancion se modifico");
+}
+
+
 module.exports = {
-  getAllSongs
+  getAllSongs,
+  postSong
 };
 
 

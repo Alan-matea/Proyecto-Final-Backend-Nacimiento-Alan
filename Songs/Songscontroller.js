@@ -17,9 +17,9 @@ function getSongsByName(nombreCancion){
   }
 }
 
-function addSongs(){
-  validarsong(song);
-  model.addSong(song);
+async function addSong(song){
+  await songsmodel.postSong(song);
+  
  }
 
 //  function validarSong(song){
@@ -27,7 +27,7 @@ function addSongs(){
 
 module.exports = {
   getSongsByName,
-  addSongs,
+  addSong,
   getFindOneSong,
   findAllSongs
 

@@ -1,7 +1,5 @@
 const songsController = require('./Songscontroller');
 
-
-
 async function getSongs (req,res) {
   try
   {
@@ -12,7 +10,6 @@ async function getSongs (req,res) {
       res.status(500).send('Hubo un error ' + e);
   }
 }
-
 
 // async function getSongByName (req,res) { 
 //   try
@@ -26,20 +23,20 @@ async function getSongs (req,res) {
 //   }
 // }
 
+ async function postSong(req,res) { 
+   try
+   {
+    await songsController.addSong(req.body);
+    res.status(200).send("la cancion se agrego correctamente.");
+    
+   }
 
-// async function postSong(req,res){ 
-//   try
-//   { 
-
-//   }
-
-//   catch(e){
-//     res.status(500)
-
-//   }
-// }
-
+   catch(e){
+     res.status(500)
+   }
+ }
 
   module.exports = {
-    getSongs
+    getSongs,
+    postSong
   };

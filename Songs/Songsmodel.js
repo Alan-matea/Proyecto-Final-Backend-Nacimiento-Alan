@@ -1,20 +1,23 @@
+const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-
-
-new Schema({
+const SongsSchema = new Schema({
   name: String,
   artist: String,
   duration: String,
   album: String,
 });
 
-const Song = 
+const Song = mongoose.model('Song', SongsSchema);
+
+async function getAllSongs(){
+  console.log('entra a get all songs');
+  return await Song.find({});
+}
 
 module.exports = {
-
-
+  getAllSongs
 };
 
 

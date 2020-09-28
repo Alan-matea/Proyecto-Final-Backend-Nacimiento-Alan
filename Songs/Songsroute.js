@@ -1,11 +1,5 @@
-const controller = require('Songscontroller');
-const express = requier('express');
-const router = express();
+const songsController = require('./Songscontroller');
 
-
-router.get('/', (req, res) => {
-    res.send('');
-});
 
 
 async function getSongs (req,res) {
@@ -20,34 +14,32 @@ async function getSongs (req,res) {
 }
 
 
-async function getSongByName (req,res) { 
-  try
-  { 
-    var songs = await songsController.findOneSong(req.params.name)
-    res.status(200).send(songs);
-  }
+// async function getSongByName (req,res) { 
+//   try
+//   { 
+//     var songs = await songsController.findOneSong(req.params.name)
+//     res.status(200).send(songs);
+//   }
 
-  catch(e){
-    res.status(500).send('Hubo un error ' + e);
-  }
-}
+//   catch(e){
+//     res.status(500).send('Hubo un error ' + e);
+//   }
+// }
 
 
-async function postSong(req,res){ 
-  try
-  { 
+// async function postSong(req,res){ 
+//   try
+//   { 
 
-  }
+//   }
 
-  catch(e){
-    res.status(500)
+//   catch(e){
+//     res.status(500)
 
-  }
-}
+//   }
+// }
 
 
   module.exports = {
-    getSongs,
-    getSongByName,
-    postSong,
+    getSongs
   };

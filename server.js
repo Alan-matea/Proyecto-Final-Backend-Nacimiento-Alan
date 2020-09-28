@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 // importando rutas
-const Songsrute = require ('./Songs/Songsroute.js');
-const Userssrute = require ('./Users/Usersroute.js');
+const Songsroute = require ('./Songs/Songsroute.js');
+const Usersroute = require ('./Users/Usersroute.js');
 
 const app = express();
 app.use(express.json());

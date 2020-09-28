@@ -1,4 +1,4 @@
-const controller = require('Songscontroller.js');
+const controller = require('Songscontroller');
 const express = requier('express');
 const router = express();
 
@@ -47,5 +47,7 @@ async function postSong(req,res){
 
 
   module.exports = {
-    router, 
-  }
+    getSongs,
+    getSongByName,
+    postSong,
+  };

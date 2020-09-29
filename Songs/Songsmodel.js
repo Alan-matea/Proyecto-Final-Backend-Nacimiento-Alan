@@ -22,7 +22,12 @@ async function postSong(body) {
   console.log("la cancion se modifico");
 }
 
+async function getSongsByName(nombreDeCancion){
+  return await Song.find({name:nombreDeCancion});
+}
+
 module.exports = {
   getAllSongs,
   postSong,
+  getSongsByName
 };

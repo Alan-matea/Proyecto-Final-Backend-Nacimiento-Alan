@@ -4,15 +4,9 @@ async function findAllSongs() {
   return await songsmodel.getAllSongs();
 }
 
-function getSongsByName(nombreCancion) {
-  if (nombreCancion != "") {
-    return model.getSongsByName(nombreCancion);
-  }
-}
-
 function getFindOneSong(nombreCancion) {
   if (nombreCancion != "") {
-    return model.getSongsByName(nombreCancion);
+    return songsmodel.getSongsByName(nombreCancion);
   }
 }
 
@@ -24,7 +18,6 @@ async function addSong(song) {
 //  }
 
 module.exports = {
-  getSongsByName,
   addSong,
   getFindOneSong,
   findAllSongs,

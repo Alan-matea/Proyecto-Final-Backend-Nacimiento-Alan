@@ -1,7 +1,7 @@
-const usersmodel = require("./Usersroute");
+const usersmodel = require("./Usersmodel");
 
 async function findAllUsers() {
-  return await songsmodel.getAllUsers();
+  return await usersmodel.getAllUsers();
 }
 
 function getUsersByName(nombreUsuario) {
@@ -17,7 +17,7 @@ function getFindOneUser(nombreUsuario) {
 }
 
 async function addUser(user) {
-  await songsmodel.postUser(user);
+  await usersmodel.postUser(user);
 }
 
 module.exports = {

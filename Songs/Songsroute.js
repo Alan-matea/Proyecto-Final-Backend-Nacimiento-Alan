@@ -11,7 +11,7 @@ async function getSongs(req, res) {
 
 async function getSongByName(req, res) {
   try {
-    var songs = await songsController.findOneSong(req.params.name);
+    var songs = await songsController.getFindOneSong(req.params.name);
     res.status(200).send(songs);
   } catch (e) {
     res.status(500).send("Hubo un error " + e);

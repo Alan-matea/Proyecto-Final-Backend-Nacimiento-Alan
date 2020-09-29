@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 // importando rutas
 const songsRoute = require("./Songs/Songsroute");
-const userRoute = require("./Users/Usersroute");
+const usersRoute = require("./Users/Usersroute");
 
 const app = express();
 app.use(express.json());
@@ -16,9 +16,9 @@ mongoose.connect(
 app.listen(4000);
 //Songs
 app.get("/songs", songsRoute.getSongs);
-app.get('/songs/:name', songsRoute.getSongByName);
+app.get("/songs/:name", songsRoute.getSongByName);
 app.post("/songs/", songsRoute.postSong);
 
 //Users
-//app.get('/users/', userRoute.getUsers);
-//app.post('/users/', userRoute.postUser);
+app.get("/users/", usersRoute.getUsers);
+app.post("/users/", usersRoute.postUser);

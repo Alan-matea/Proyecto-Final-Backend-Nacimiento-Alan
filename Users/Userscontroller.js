@@ -1,28 +1,49 @@
-const { model } = require("mongoose");
+const usersmodel = require("./Usersroute");
 
-function getUsersByName(nombreUsuario){
-  if(nombreUsuario != ''){
-    return model.getUsersByName(nombreUsuario);
-  }
+async function findAllUsers() {
+  return await songsmodel.getAllUsers();
+}
 
-  }
-
-  function getFindOneUser(nombreUsuario)
-  if(nombreUsuario != ''){
+function getUsersByName(nombreUsuario) {
+  if (nombreUsuario != "") {
     return model.getUsersByName(nombreUsuario);
   }
 }
 
-function addUsers(){
-  validarsong(song);
-  model.addSong(song);
- }
+function getFindOneUser(nombreUsuario) {
+  if (nombreUsuario != "") {
+    return model.getUsersByName(nombreUsuario);
+  }
+}
+
+async function addUser(user) {
+  await songsmodel.postUser(user);
+}
+
+module.exports = {
+  findAllUsers,
+  getUsersByName,
+  getFindOneUser,
+  addUser,
+};
+
+// function getUsersByName(nombreUsuario){
+//   if(nombreUsuario != ''){
+//     return model.getUsersByName(nombreUsuario);
+//   }
+
+//   }
+
+//   function getFindOneUser(nombreUsuario)
+//   if(nombreUsuario != ''){
+//     return model.getUsersByName(nombreUsuario);
+//   }
+// }
+
+// function addUsers(){
+//   validarsong(song);
+//   model.addSong(song);
+//  }
 
 //  function validarSong(song){
 //  }
-
-module.exports = {
-  getUsersByName,
-  addUsers,
-  getFindOneUser,
-  };

@@ -9,12 +9,12 @@ async function getSongs(req, res) {
   }
 }
 
-async function getSongByName(req,res) {
-  try{
-    var songs = await songsController.findOneSong(req.params.name)
+async function getSongByName(req, res) {
+  try {
+    var songs = await songsController.findOneSong(req.params.name);
     res.status(200).send(songs);
-  } catch(e) {
-    res.status(500).send('Hubo un error ' + e);
+  } catch (e) {
+    res.status(500).send("Hubo un error " + e);
   }
 }
 
@@ -30,5 +30,5 @@ async function postSong(req, res) {
 module.exports = {
   getSongs,
   postSong,
-  getSongByName
+  getSongByName,
 };

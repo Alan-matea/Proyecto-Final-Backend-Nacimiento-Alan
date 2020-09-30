@@ -11,7 +11,7 @@ async function getUsers(req, res) {
 
 async function getUserByName(req, res) {
   try {
-    var users = await usersController.findOneSong(req.params.name);
+    var users = await usersController.findOneuser(req.params.name);
     res.status(200).send(users);
   } catch (e) {
     res.status(500).send("Hubo un error " + e);
@@ -27,8 +27,30 @@ async function postUser(req, res) {
   }
 }
 
+async function modUser(req, res) {
+  try {
+    var name = req.params.name;
+    var userBody = req.body;
+    await usersController.modUser(name, userBody);
+    res.status(200).send("Se modifió un usuario");
+  } catch (e) {
+    res.status(500).send("Hubo un error " + e);
+  }
+}
+
+async function delUser(req, res) {
+  try {
+    await usersController.delUser(req.params.name);
+    res.status(200).send("Se eliminó una usuario");
+  } catch (e) {
+    res.status(500).send("Hubo un error " + e);
+  }
+}
+
 module.exports = {
   getUsers,
   getUserByName,
   postUser,
+  modUser,
+  delUser
 };

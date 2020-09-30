@@ -10,15 +10,19 @@ app.use(express.json());
 
 mongoose.connect(
   "mongodb+srv://Alan-matea:Matea2020@prueba-db.vrgps.mongodb.net/Mateify?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
 
 app.listen(4000);
 //Songs
 app.get("/songs", songsRoute.getSongs);
 app.get("/songs/:name", songsRoute.getSongByName);
-app.post("/songs/", songsRoute.postSong);
+app.post("/songs", songsRoute.postSong);
+app.put("/songs/:name", songsRoute.modSong);
+app.delete("/songs/:name", songsRoute.delSong);
 
 //Users
-app.get("/users/", usersRoute.getUsers);
-app.post("/users/", usersRoute.postUser);
+app.get("/users", usersRoute.getUsers);
+app.post("/users", usersRoute.postUser);
+app.put("/users/:name", usersRoute.modUser);
+app.delete("/users/:name", usersRoute.delUser);

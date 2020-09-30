@@ -27,8 +27,30 @@ async function postSong(req, res) {
   }
 }
 
+async function modSong(req, res) {
+  try {
+    var name = req.params.name;
+    var songBody = req.body;
+    await songsController.modSong(name, songBody);
+    res.status(200).send("Se modifió una cancion");
+  } catch (e) {
+    res.status(500).send("Hubo un error " + e);
+  }
+}
+
+async function delSong(req, res) {
+  try {
+    await songsController.delSong(req.params.name);
+    res.status(200).send("Se eliminó una canción");
+  } catch (e) {
+    res.status(500).send("Hubo un error " + e);
+  }
+}
+
 module.exports = {
   getSongs,
   postSong,
   getSongByName,
+  modSong,
+  delSong
 };

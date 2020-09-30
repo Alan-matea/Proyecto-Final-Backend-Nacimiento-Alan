@@ -19,15 +19,27 @@ async function getAllSongs() {
 async function postSong(body) {
   const newSong = new Song(body);
   await newSong.save();
-  console.log("la cancion se modifico");
+  console.log("la cancion se agregó");
 }
 
 async function getSongsByName(nombreDeCancion){
   return await Song.find({name:nombreDeCancion});
 }
 
+async function modSong(name, songBody){
+  var uptSong = await Song.findOneAndUpdate({name: name}, songBody);
+  console.log(uptSong);
+  uptSong.save();
+}
+
+async function delSong(name){
+  await Song.findOneAndDelete({name: name});
+}
+
 module.exports = {
   getAllSongs,
   postSong,
-  getSongsByName
+  getSongsByName,
+  modSong,
+  delSong
 };

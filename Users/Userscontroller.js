@@ -20,11 +20,22 @@ async function addUser(user) {
   await usersmodel.postUser(user);
 }
 
+async function modUser(name, userBody) {
+  await usersmodel.modUser(name, userBody);
+}
+
+async function delUser(name) {
+  return usersmodel.delUser(name); 
+}
+
+
 module.exports = {
   findAllUsers,
   getUsersByName,
   getFindOneUser,
   addUser,
+  modUser,
+  delUser
 };
 
 // function getUsersByName(nombreUsuario){
@@ -41,9 +52,9 @@ module.exports = {
 // }
 
 // function addUsers(){
-//   validarsong(song);
-//   model.addSong(song);
+//   validaruser(user);
+//   model.adduser(user);
 //  }
 
-//  function validarSong(song){
+//  function validaruser(user){
 //  }

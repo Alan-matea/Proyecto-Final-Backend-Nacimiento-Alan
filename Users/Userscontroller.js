@@ -29,6 +29,9 @@ async function delUser(name) {
 }
 
 
+
+
+
 module.exports = {
   findAllUsers,
   getUsersByName,
@@ -38,23 +41,3 @@ module.exports = {
   delUser
 };
 
-// function getUsersByName(nombreUsuario){
-//   if(nombreUsuario != ''){
-//     return model.getUsersByName(nombreUsuario);
-//   }
-
-//   }
-
-//   function getFindOneUser(nombreUsuario)
-//   if(nombreUsuario != ''){
-//     return model.getUsersByName(nombreUsuario);
-//   }
-// }
-
-// function addUsers(){
-//   validaruser(user);
-//   model.adduser(user);
-//  }
-
-//  function validaruser(user){
-//  }

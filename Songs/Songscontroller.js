@@ -22,9 +22,6 @@ async function delSong(name) {
   return songsmodel.delSong(name); 
 }
 
-//  function validarSong(song){
-//  }
-
 module.exports = {
   addSong,
   getFindOneSong,

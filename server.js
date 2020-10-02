@@ -10,12 +10,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+
 mongoose.connect(
   "mongodb+srv://Alan-matea:Matea2020@prueba-db.vrgps.mongodb.net/Mateify?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
 
-app.listen(4000);
+app.listen(process.env.PORT);
 //Songs
 app.get("/songs", songsRoute.getSongs);
 app.get("/songs/:name", songsRoute.getSongByName);

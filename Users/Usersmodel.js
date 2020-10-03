@@ -14,7 +14,7 @@ const User = mongoose.model("User", UsersSchema);
 
 async function getAllUsers() {
   console.log("entra a get all Users");
-  return await User.find({}).populate("likeSongs Song");
+  return await User.find({}).populate("likedSongs Song");
 }
 
 async function postUser(body) {
@@ -40,3 +40,11 @@ module.exports = {
   modUser,
   delUser
 };
+
+// const addFavsssongToUser = async (req, res) => (
+//   const userName = req.params.user;
+//   const songName = req.params.song;
+//   cosnt song = await songCollection.Song.findOne({name:})
+// )
+
+// async function addFavsssongToUser 

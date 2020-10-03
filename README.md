@@ -1,6 +1,6 @@
 # Proyecto-Final-Backend-Nacimiento-Alan
-Proyecto-Final-Backend-Nacimiento-Alan
-ULRBase = https://api-mateify-alan-nacimiento.herokuapp.com/
+- Proyecto-Final-Backend-Nacimiento-Alan
+- ULRBase = https://api-mateify-alan-nacimiento.herokuapp.com/
 
 <h1>Contrato de la Api</h1>
 

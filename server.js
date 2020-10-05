@@ -32,5 +32,5 @@ app.put("/users/:name", usersRoute.modUser);
 app.delete("/users/:name", usersRoute.delUser);
 
 app.post("/users/:nameuser/song", usersRoute.postUserSong);
-app.delete("/user/:nameuser/:namesong", usersRoute.delUserSong);
+app.delete("/user/:nameuser/:songid", usersRoute.delUserSong);
 

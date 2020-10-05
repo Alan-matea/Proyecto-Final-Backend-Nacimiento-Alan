@@ -58,7 +58,7 @@ async function postUserSong(req, res) {
 
 async function delUserSong(req, res) {
   try {
-    await usersController.delUserSong(req.params.nameuser, req.params.namesong);
+    await usersController.delUserSong(req.params.nameuser, req.params.songid);
     res.status(200).send("Se eliminó una cancion de usuario");
   } catch (e) {
     res.status(500).send("Hubo un error " + e);

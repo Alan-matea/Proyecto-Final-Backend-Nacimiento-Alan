@@ -37,14 +37,14 @@ async function delUser(name){
   await User.findOneAndDelete({name: name});
 }
 
-async function postUserSong(username, cancion) {
-  const user = await User.find({name: username});
+async function postUserSong(nameuser, cancion) {
+  const user = await User.find({name: nameuser});
   user[0].likedSongs.push(cancion);
   await user[0].save();
 }
 
-async function delUserSong(username, cancionId) {
-  const user = await User.find({name: username});
+async function delUserSong(nameuser, cancionId) {
+  const user = await User.find({name: nameuser});
   user[0].likedSongs.remove(cancionId);
   await user[0].save();
 }
@@ -57,12 +57,4 @@ module.exports = {
   delUser,
   postUserSong,
   delUserSong
-};
-
-// const addFavsssongToUser = async (req, res) => (
-//   const userName = req.params.user;
-//   const songName = req.params.song;
-//   cosnt song = await songCollection.Song.findOne({name:})
-// )
-
-// async function addFavsssongToUser 
+}; 

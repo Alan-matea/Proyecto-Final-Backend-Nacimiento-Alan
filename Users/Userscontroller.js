@@ -4,16 +4,8 @@ async function findAllUsers() {
   return await usersmodel.getAllUsers();
 }
 
-function getUsersByName(nombreUsuario) {
-  if (nombreUsuario != "") {
-    return model.getUsersByName(nombreUsuario);
-  }
-}
-
-function getFindOneUser(nombreUsuario) {
-  if (nombreUsuario != "") {
-    return model.getUsersByName(nombreUsuario);
-  }
+async function getFindOneUser(nombreUsuario) {
+  return await usersmodel.getUsersByName(nombreUsuario);
 }
 
 async function addUser(user) {
@@ -25,12 +17,8 @@ async function modUser(name, userBody) {
 }
 
 async function delUser(name) {
-  return usersmodel.delUser(name); 
+  return await usersmodel.delUser(name); 
 }
-
-
-
-
 
 module.exports = {
   findAllUsers,

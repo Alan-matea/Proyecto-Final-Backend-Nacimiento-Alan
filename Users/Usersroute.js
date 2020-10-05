@@ -11,8 +11,8 @@ async function getUsers(req, res) {
 
 async function getUserByName(req, res) {
   try {
-    var users = await usersController.findOneuser(req.params.name);
-    res.status(200).send(users);
+    var user = await usersController.getFindOneUser(req.params.name);
+    res.status(200).send(user);
   } catch (e) {
     res.status(500).send("Hubo un error " + e);
   }

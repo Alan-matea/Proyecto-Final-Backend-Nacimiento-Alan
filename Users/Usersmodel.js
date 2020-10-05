@@ -17,7 +17,7 @@ async function getAllUsers() {
   return await User.find({}).populate("likedSongs Song");
 }
 
-async function getUsersByName(nombreUsuario) {
+async function getUser(nombreUsuario) {
   return await User.find({name: nombreUsuario}).populate("likedSongs Song");
 }
 
@@ -39,7 +39,7 @@ async function delUser(name){
 
 module.exports = {
   getAllUsers,
-  getUsersByName,
+  getUser,
   postUser,
   modUser,
   delUser

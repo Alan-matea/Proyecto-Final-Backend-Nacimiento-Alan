@@ -5,7 +5,7 @@ async function findAllUsers() {
 }
 
 async function getFindOneUser(nombreUsuario) {
-  return await usersmodel.getUsersByName(nombreUsuario);
+  return await usersmodel.getUser(nombreUsuario);
 }
 
 async function addUser(user) {
@@ -22,7 +22,6 @@ async function delUser(name) {
 
 module.exports = {
   findAllUsers,
-  getUsersByName,
   getFindOneUser,
   addUser,
   modUser,

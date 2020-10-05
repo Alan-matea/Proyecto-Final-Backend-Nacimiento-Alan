@@ -37,12 +37,26 @@ async function delUser(name){
   await User.findOneAndDelete({name: name});
 }
 
+async function postUserSong(username, cancion) {
+  const user = await User.find({name: username});
+  user[0].likedSongs.push(cancion);
+  await user[0].save();
+}
+
+async function delUserSong(username, cancionId) {
+  const user = await User.find({name: username});
+  user[0].likedSongs.remove(cancionId);
+  await user[0].save();
+}
+
 module.exports = {
   getAllUsers,
   getUser,
   postUser,
   modUser,
-  delUser
+  delUser,
+  postUserSong,
+  delUserSong
 };
 
 // const addFavsssongToUser = async (req, res) => (

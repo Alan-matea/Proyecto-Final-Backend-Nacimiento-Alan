@@ -47,10 +47,30 @@ async function delUser(req, res) {
   }
 }
 
+async function postUserSong(req, res) {
+  try {
+    await usersController.addUserSong(req.params.username, req.body);
+    res.status(200).send("Se agrego cancion a usuario");
+  } catch (e) {
+    res.status(500);
+  }
+}
+
+async function delUserSong(req, res) {
+  try {
+    await usersController.delUserSong(req.params.username, req.params.namesong);
+    res.status(200).send("Se eliminó una cancion de usuario");
+  } catch (e) {
+    res.status(500).send("Hubo un error " + e);
+  }
+}
+
 module.exports = {
   getUsers,
   getUserByName,
   postUser,
   modUser,
-  delUser
+  delUser,
+  postUserSong,
+  delUserSong
 };

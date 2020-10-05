@@ -20,11 +20,21 @@ async function delUser(name) {
   return await usersmodel.delUser(name); 
 }
 
+async function addUserSong(nameuser, cancion) {
+  await usersmodel.postUserSong(nameuser, cancion);
+}
+
+async function delUserSong(nameuser, cancionId) {
+  await usersmodel.delUserSong(nameuser, cancionId);
+}
+
 module.exports = {
   findAllUsers,
   getFindOneUser,
   addUser,
   modUser,
-  delUser
+  delUser,
+  addUserSong,
+  delUserSong
 };
 

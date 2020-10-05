@@ -30,3 +30,7 @@ app.get("/users/:name", usersRoute.getUserByName);
 app.post("/users", usersRoute.postUser);
 app.put("/users/:name", usersRoute.modUser);
 app.delete("/users/:name", usersRoute.delUser);
+
+app.post("/users/:nameuser/song", usersRoute.postUserSong);
+app.delete("/user/:nameuser/:namesong", usersRoute.delUserSong);
+
